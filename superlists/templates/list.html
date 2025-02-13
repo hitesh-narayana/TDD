@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %}Lists{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for list_ in lists %}
+            <li>{{ list_.name }}</li>
+        {% endfor %}
+    </ul>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="text" name="list_name" placeholder="Enter a new list name">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
