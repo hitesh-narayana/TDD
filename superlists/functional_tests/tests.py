@@ -78,6 +78,12 @@ class NewVisitorTest(LiveServerTestCase):
         submit_button = self.browser.find_element(By.XPATH, "//button[@type='submit']")
         submit_button.click()
 
+        # Wait for redirect and check if the item was added
+        WebDriverWait(self.browser, 10).until(
+            EC.url_matches(self.live_server_url + "/")  # Ensure it redirects correctly
+        )
+
+
 
 
 
