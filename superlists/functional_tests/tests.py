@@ -53,7 +53,7 @@ class NewVisitorTest(LiveServerTestCase):
     
     def setUp(self):
         """Set up Selenium WebDriver"""
-        self.browser = webdriver.Chrome()  # Ensure ChromeDriver is installed
+        self.browser = webdriver.Chrome()  
 
     def tearDown(self):
         """Quit browser after test"""
@@ -67,18 +67,18 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Wait for the input field to be visible
         inputbox = WebDriverWait(self.browser, 10).until(
+            # Added 'id_name' to the locator to find the input field
+            # Changed the locator to find the input field by ID
+            # added widget to the input field in the form to give it an ID
             EC.presence_of_element_located((By.ID, "id_name"))
         )
-
         # Enter new item and submit
         inputbox.send_keys("A new list item")
+        # find XPath of the submit button
         submit_button = self.browser.find_element(By.XPATH, "//button[@type='submit']")
         submit_button.click()
 
-        # # Wait for redirect and check if the item was added
-        # WebDriverWait(self.browser, 10).until(
-        #     EC.url_matches(self.live_server_url + "/")  # Ensure it redirects correctly
-        # )
+
 
 
 
