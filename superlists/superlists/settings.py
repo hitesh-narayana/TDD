@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'superlists.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydjango_db',  
+        'NAME': 'tdd_db',  
         'USER': 'hitesh',       
         'PASSWORD': 'hnarayana', 
         'HOST': 'localhost',      
