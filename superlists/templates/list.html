@@ -3,14 +3,10 @@
 {% block title %}Lists{% endblock %}
 
 {% block content %}
-    <ul>
-        {% for list_ in lists %}
-            <li>{{ list_.name }}</li>
-        {% endfor %}
-    </ul>
+    <h3> Add new Items to list</h3>
     <form method="POST" action="">
         {% csrf_token %}
-        <input type="text" name="list_name" placeholder="Enter a new list name">
+        {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
 {% endblock %}
