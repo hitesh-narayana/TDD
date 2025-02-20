@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block title %}Lists{% endblock %}
+
+{% block content %}
+    <h3> Add new Items to list</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

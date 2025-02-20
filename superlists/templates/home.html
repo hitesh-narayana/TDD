@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Today's List</h1>
+    <br>
+    <div>
+        <ul>
+            {% for list_ in lists %}
+                <li>{{list_.id}}.{{ list_.name }}</li>
+            {% endfor %}
+        </ul>
+        <p><a href="{% url 'view_list' %}">Add More</a></p>
+    </div>
+    <br>
+{% endblock %}
